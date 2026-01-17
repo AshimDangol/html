@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admission Form</title>
+    <style>
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Admission Form</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="Phone">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+        </fieldset>
+
+        <fieldset>
+            <legend>Other Details</legend>
+            <label for="course">Select Course:</label>
+            <select id="course">
+                <option>Web Development</option>
+                <option>AI</option>
+                <option>Data Science</option>
+                <option>Cyber Security</option>
+            </select>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume">
+
+            <input type="checkbox" id="terms" required> <label for="terms">Agree to Terms and Conditions</label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

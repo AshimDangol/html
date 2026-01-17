@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website - [Your Name]</title>
+    <meta name="description" content="A personal website showcasing skills, projects, and contact information.">
+    <meta name="keywords" content="personal website, web developer, portfolio, HTML, projects, contact">
+    <meta name="author" content="[Your Name]">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #283747;
+            color: #ffffff;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+        }
+        nav {
+            background-color: #1a5276;
+            padding: 0.8em 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #2e86c1;
+            border-radius: 4px;
+        }
+        section {
+            background-color: #ffffff;
+            margin-top: 20px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #283747;
+            border-bottom: 2px solid #5d6d7e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .profile-img {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #1a5276;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .skills-list li {
+            background-color: #d1e7f6;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #1a5276;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .project-card h3 {
+            margin: 15px 15px 0;
+            color: #283747;
+        }
+        .project-card p {
+            margin: 0 15px 15px;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #eaf2f8;
+            color: #283747;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fbfd;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        form button {
+            background-color: #1a5276;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #2e86c1;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #283747;
+            color: #ffffff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>[Your Name]</h1>
+            <p>Passionate Web Developer & Creative Problem Solver</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="https://via.placeholder.com/150" alt="Profile Picture of [Your Name]" class="profile-img">
+            <p>Hello! I'm Ashim, a dedicated web developer with a strong foundation in HTML, CSS, and JavaScript. I enjoy bringing ideas to life on the web and am constantly learning new technologies to build efficient and user-friendly applications.</p>
+            <p>My journey in web development started with a curiosity for how websites work, evolving into a passion for creating engaging digital experiences. I focus on writing clean, semantic, and accessible code.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Responsive Design</li>
+                <li>Git & GitHub</li>
+                <li>Accessibility (A11Y)</li>
+                <li>SEO Best Practices</li>
+                <li>Basic UI/UX</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/300x180" alt="Project 1 Thumbnail">
+                    <h3>Project Title One</h3>
+                    <p>A brief description of project one, highlighting its key features and technologies used. This project demonstrated responsive design.</p>
+                    <p><a href="#" target="_blank">View Project</a></p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/300x180" alt="Project 2 Thumbnail">
+                    <h3>Project Title Two</h3>
+                    <p>Description of project two, focusing on form handling and data presentation. Built with semantic HTML elements.</p>
+                    <p><a href="#" target="_blank">View Project</a></p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/300x180" alt="Project 3 Thumbnail">
+                    <h3>Project Title Three</h3>
+                    <p>This project involved creating an interactive data table with sorting capabilities and media integration.</p>
+                    <p><a href="#" target="_blank">View Project</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Experience & Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Title/Role</th>
+                        <th>Organization/Institution</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-Present</td>
+                        <td>Junior Web Developer</td>
+                        <td>Tech Solutions Inc.</td>
+                        <td>Developed and maintained client websites using modern web technologies.</td>
+                    </tr>
+                    <tr>
+                        <td>2022-2024</td>
+                        <td>B.Sc. in Computer Science</td>
+                        <td>University Name</td>
+                        <td>Focused on software engineering principles and web development.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form action="#" method="post">
+                <label for="contactName">Name:</label>
+                <input type="text" id="contactName" name="contact_name" required>
+
+                <label for="contactEmail">Email:</label>
+                <input type="email" id="contactEmail" name="contact_email" required>
+
+                <label for="contactSubject">Subject:</label>
+                <input type="text" id="contactSubject" name="contact_subject">
+
+                <label for="contactMessage">Message:</label>
+                <textarea id="contactMessage" name="contact_message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+            <p>Connect with me on <a href="#" style="color: #ffffff;">LinkedIn</a> | <a href="#" style="color: #ffffff;">GitHub</a></p>
+        </div>
+    </footer>
+</body>
+</html>

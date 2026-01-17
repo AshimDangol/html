@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Table</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Report</h1>
+
+    <table border="1">
+        <caption>Student Academic Performance</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th colspan="2">Marks</th>
+                <th rowspan="2">Grade</th>
+            </tr>
+            <tr>
+                <th>Math</th>
+                <th>Science</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ram</td>
+                <td>85</td>
+                <td>90</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>Shyam</td>
+                <td>78</td>
+                <td>82</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>Sita</td>
+                <td>92</td>
+                <td>88</td>
+                <td>A+</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Overall results based on semester performance.</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
