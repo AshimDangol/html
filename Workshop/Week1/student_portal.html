@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="announcements">
+            <h2>Announcements</h2>
+            <article>
+                <h3>Important Update: Semester Break</h3>
+                <p>Dear students, please note that the semester break will be from December 20th to January 5th. Classes will resume on January 6th.</p>
+            </article>
+            <article>
+                <h3>Upcoming Event: Career Fair</h3>
+                <p>Join us for our annual Career Fair on November 15th at the university auditorium. Don't miss this opportunity to connect with potential employers!</p>
+            </article>
+        </section>
+
+        <section id="submission-form">
+            <h2>Assignment Submission</h2>
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Submit Your Assignment</legend>
+                    <label for="assignment-title">Assignment Title:</label>
+                    <input type="text" id="assignment-title" name="assignment-title" required>
+
+                    <label for="course">Course:</label>
+                    <select id="course" name="course" required>
+                        <option value="">--Select Course--</option>
+                        <option value="math">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                    </select>
+
+                    <label for="assignment-file">Upload File:</label>
+                    <input type="file" id="assignment-file" name="assignment-file" accept=".pdf,.doc,.docx" required>
+
+                    <label for="notes">Additional Notes (optional):</label>
+                    <textarea id="notes" name="notes" rows="5"></textarea>
+
+                    <button type="submit">Submit Assignment</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Portal</p>
+    </footer>
+</body>
+</html>
