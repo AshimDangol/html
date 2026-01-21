@@ -1,0 +1,48 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element Selectors */
+h1 {
+    color: #336699;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Class Selectors */
+.section-box {
+    border: 1px solid #cccccc;
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+}
+
+/* ID Selectors */
+#student-name {
+    color: #cc3300;
+    font-weight: bold;
+}
+
+/* Group Selectors */
+h2, h3 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+/* Descendant Selectors */
+section:nth-of-type(2) ul li {
+    list-style-type: decimal;
+    color: #28a745;
+}
+
+section:nth-of-type(3) ul li {
+    list-style-type: square;
+    color: #ffc107;
+}
