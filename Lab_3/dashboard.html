@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>📦 Inventory Management System</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="list.html">Products</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section>
+            <h2>Dashboard Overview</h2>
+            <p>
+                Welcome to your Inventory Management Dashboard. Below you'll find key metrics and statistics 
+                about your inventory system. Use this information to monitor stock levels and system activity.
+            </p>
+        </section>
+
+        <!-- Summary Boxes Section -->
+        <section>
+            <h2>Key Metrics</h2>
+            <div class="summary-container">
+                <div class="summary-box">
+                    <h3>Total Products</h3>
+                    <div class="number">1,247</div>
+                    <p>Active products in inventory</p>
+                </div>
+
+                <div class="summary-box">
+                    <h3>Low Stock Items</h3>
+                    <div class="number">45</div>
+                    <p>Products below threshold</p>
+                </div>
+
+                <div class="summary-box">
+                    <h3>Total Users</h3>
+                    <div class="number">28</div>
+                    <p>Active system users</p>
+                </div>
+
+                <div class="summary-box">
+                    <h3>Stock Value</h3>
+                    <div class="number">$125K</div>
+                    <p>Current inventory value</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activities Section -->
+        <section>
+            <h2>Recent Activities</h2>
+            <p>The following are the most recent transactions and activities in the system:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity Date</th>
+                        <th>Activity Type</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026-01-23 14:30</td>
+                        <td>Stock Received</td>
+                        <td>Laptop Pro 15</td>
+                        <td>50</td>
+                        <td>John Smith</td>
+                    </tr>
+                    <tr>
+                        <td>2026-01-23 13:15</td>
+                        <td>Stock Issued</td>
+                        <td>Wireless Mouse</td>
+                        <td>100</td>
+                        <td>Sarah Johnson</td>
+                    </tr>
+                    <tr>
+                        <td>2026-01-23 11:45</td>
+                        <td>Inventory Adjustment</td>
+                        <td>USB Type-C Cable</td>
+                        <td>-20</td>
+                        <td>Mike Wilson</td>
+                    </tr>
+                    <tr>
+                        <td>2026-01-23 10:20</td>
+                        <td>Stock Received</td>
+                        <td>Mechanical Keyboard RGB</td>
+                        <td>75</td>
+                        <td>Emma Davis</td>
+                    </tr>
+                    <tr>
+                        <td>2026-01-23 09:00</td>
+                        <td>Stock Issued</td>
+                        <td>4K Monitor 27</td>
+                        <td>10</td>
+                        <td>James Brown</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Quick Actions Section -->
+        <section>
+            <h2>Quick Actions</h2>
+            <p>Common tasks you can perform:</p>
+            
+            <article>
+                <h3>📋 View Product Inventory</h3>
+                <p>
+                    Access the complete list of all products in your inventory. You can view details, 
+                    stock levels, and other information for each product.
+                </p>
+                <button onclick="window.location.href='list.html'" style="width: auto; padding: 10px 20px;">
+                    Go to Products
+                </button>
+            </article>
+
+            <article>
+                <h3>➕ Add New Product</h3>
+                <p>
+                    Add a new product to your inventory system. You'll need to provide product details, 
+                    category, and initial stock information.
+                </p>
+                <button style="width: auto; padding: 10px 20px;">Add Product</button>
+            </article>
+
+            <article>
+                <h3>📊 Generate Reports</h3>
+                <p>
+                    Create detailed reports about your inventory, stock movements, and other metrics. 
+                    Reports can be customized based on date range and product category.
+                </p>
+                <button style="width: auto; padding: 10px 20px;">Generate Report</button>
+            </article>
+
+            <article>
+                <h3>⚙️ System Settings</h3>
+                <p>
+                    Configure system preferences, user roles, notification settings, and other administrative 
+                    options to customize the system according to your needs.
+                </p>
+                <button style="width: auto; padding: 10px 20px;">Settings</button>
+            </article>
+        </section>
+
+        <!-- System Status Section -->
+        <section>
+            <h2>System Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Status</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Database Server</td>
+                        <td style="color: #27ae60; font-weight: bold;">✓ Online</td>
+                        <td>2026-01-23 14:45</td>
+                    </tr>
+                    <tr>
+                        <td>Web Server</td>
+                        <td style="color: #27ae60; font-weight: bold;">✓ Online</td>
+                        <td>2026-01-23 14:45</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication Service</td>
+                        <td style="color: #27ae60; font-weight: bold;">✓ Online</td>
+                        <td>2026-01-23 14:45</td>
+                    </tr>
+                    <tr>
+                        <td>Backup System</td>
+                        <td style="color: #27ae60; font-weight: bold;">✓ Online</td>
+                        <td>2026-01-23 14:45</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Inventory Management System. All rights reserved. | <strong>Contact:</strong> support@inventorysystem.com</p>
+    </footer>
+</body>
+</html>

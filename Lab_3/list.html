@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>📦 Inventory Management System</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="list.html">Products</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section>
+            <h2>Product Inventory List</h2>
+            <p>
+                Below is a comprehensive list of all products currently in your inventory. 
+                Each product shows essential information including stock level, unit price, and last updated date. 
+                Use this page to monitor your inventory and make informed decisions about stock management.
+            </p>
+        </section>
+
+        <!-- Filters and Actions Section -->
+        <section>
+            <h2>Filter & Search</h2>
+            <form style="max-width: 100%;">
+                <div style="display: inline-block; width: 30%; margin-right: 2%; vertical-align: top;">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="">-- All Categories --</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="peripherals">Peripherals</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="software">Software</option>
+                    </select>
+                </div>
+
+                <div style="display: inline-block; width: 30%; margin-right: 2%; vertical-align: top;">
+                    <label for="stock-status">Stock Status:</label>
+                    <select id="stock-status" name="stock-status">
+                        <option value="">-- All Status --</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+
+                <div style="display: inline-block; width: 30%; vertical-align: top;">
+                    <label for="search">Search Product:</label>
+                    <input type="text" id="search" name="search" placeholder="Enter product name...">
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <button type="reset" style="width: auto; padding: 10px 20px; margin-right: 10px;">Clear Filters</button>
+                    <button type="submit" style="width: auto; padding: 10px 20px;">Search</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Products Table -->
+        <section>
+            <h2>Product Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Current Stock</th>
+                        <th>Unit Price</th>
+                        <th>Reorder Level</th>
+                        <th>Status</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PRD-001</td>
+                        <td>Laptop Pro 15</td>
+                        <td>Electronics</td>
+                        <td>85</td>
+                        <td>$1,299.99</td>
+                        <td>20</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-002</td>
+                        <td>Wireless Mouse</td>
+                        <td>Peripherals</td>
+                        <td>542</td>
+                        <td>$29.99</td>
+                        <td>100</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-003</td>
+                        <td>USB Type-C Cable</td>
+                        <td>Accessories</td>
+                        <td>18</td>
+                        <td>$9.99</td>
+                        <td>50</td>
+                        <td style="color: #e74c3c; font-weight: bold;">Low Stock</td>
+                        <td>2026-01-22</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-004</td>
+                        <td>Mechanical Keyboard RGB</td>
+                        <td>Peripherals</td>
+                        <td>156</td>
+                        <td>$149.99</td>
+                        <td>30</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-005</td>
+                        <td>4K Monitor 27"</td>
+                        <td>Electronics</td>
+                        <td>31</td>
+                        <td>$599.99</td>
+                        <td>15</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-006</td>
+                        <td>External SSD 1TB</td>
+                        <td>Accessories</td>
+                        <td>5</td>
+                        <td>$149.99</td>
+                        <td>20</td>
+                        <td style="color: #e74c3c; font-weight: bold;">Low Stock</td>
+                        <td>2026-01-21</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-007</td>
+                        <td>USB-C Hub Multi-Port</td>
+                        <td>Accessories</td>
+                        <td>0</td>
+                        <td>$49.99</td>
+                        <td>15</td>
+                        <td style="color: #c0392b; font-weight: bold;">Out of Stock</td>
+                        <td>2026-01-20</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-008</td>
+                        <td>Desk Lamp LED</td>
+                        <td>Accessories</td>
+                        <td>92</td>
+                        <td>$39.99</td>
+                        <td>20</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-009</td>
+                        <td>Webcam HD 1080P</td>
+                        <td>Peripherals</td>
+                        <td>67</td>
+                        <td>$79.99</td>
+                        <td>25</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                    <tr>
+                        <td>PRD-010</td>
+                        <td>Wireless Earbuds Pro</td>
+                        <td>Electronics</td>
+                        <td>124</td>
+                        <td>$199.99</td>
+                        <td>40</td>
+                        <td style="color: #27ae60; font-weight: bold;">In Stock</td>
+                        <td>2026-01-23</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Inventory Summary Section -->
+        <section>
+            <h2>Inventory Summary Statistics</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Count</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Total Products</strong></td>
+                        <td>1,247</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Products In Stock</strong></td>
+                        <td>1,089</td>
+                        <td>87.3%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Products with Low Stock</strong></td>
+                        <td>112</td>
+                        <td>9.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Products Out of Stock</strong></td>
+                        <td>46</td>
+                        <td>3.7%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Additional Information Section -->
+        <section>
+            <h2>Product Management Information</h2>
+            <article>
+                <h3>📝 Stock Status Definitions</h3>
+                <ul>
+                    <li><strong>In Stock:</strong> Product has sufficient inventory above the reorder level</li>
+                    <li><strong>Low Stock:</strong> Product inventory is below the reorder level but not zero</li>
+                    <li><strong>Out of Stock:</strong> Product inventory is completely depleted (0 units)</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>⚠️ Reorder Instructions</h3>
+                <p>
+                    When a product reaches its reorder level, it's time to place a new order. 
+                    The reorder level is set based on average consumption rate and lead time. 
+                    Monitor low stock items regularly and initiate orders promptly to avoid service disruption.
+                </p>
+            </article>
+
+            <article>
+                <h3>🔄 Last Updated Information</h3>
+                <p>
+                    The "Last Updated" column shows when the product information or stock level was last modified. 
+                    Regular updates help maintain data accuracy and ensure you have the most current inventory information.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Inventory Management System. All rights reserved. | <strong>Contact:</strong> support@inventorysystem.com</p>
+    </footer>
+</body>
+</html>

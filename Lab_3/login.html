@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>📦 Inventory Management System</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="list.html">Products</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2 style="text-align: center; border: none; padding: 0;">User Login</h2>
+            
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">User Role:</label>
+                    <select id="role" name="role" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="admin">Administrator</option>
+                        <option value="manager">Inventory Manager</option>
+                        <option value="staff">Staff Member</option>
+                        <option value="viewer">Viewer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember" style="display: inline; margin-left: 8px;">Remember me</label>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Additional Information -->
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background-color: #ecf0f1; border-radius: 4px;">
+                <p><strong>Demo Credentials:</strong></p>
+                <p>Username: <code>admin</code> | Password: <code>password123</code></p>
+                <p style="font-size: 12px; margin-top: 15px; color: #7f8c8d;">
+                    If you don't have an account, please contact the system administrator.
+                </p>
+            </div>
+        </section>
+
+        <!-- Account Recovery Section -->
+        <section style="max-width: 600px; margin: 30px auto;">
+            <h3>Need Help?</h3>
+            <p>
+                If you've forgotten your password or are experiencing any issues logging in, 
+                please contact our support team at <strong>support@inventorysystem.com</strong> 
+                or call us at <strong>1-800-INV-MGMT</strong>.
+            </p>
+            <p>
+                Our support team is available Monday through Friday, 9:00 AM to 5:00 PM EST.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Inventory Management System. All rights reserved. | <strong>Contact:</strong> support@inventorysystem.com</p>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const role = document.getElementById('role').value;
+            
+            if (username && role) {
+                alert('Login successful! Welcome, ' + username + ' (' + role + ')');
+                // In a real system, this would redirect to the dashboard
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>
