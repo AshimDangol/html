@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4.1: Responsive Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* DESKTOP NAVIGATION - Display as horizontal */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: background 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom-color: #ffd700;
+        }
+
+        /* HAMBURGER MENU BUTTON - Hidden on desktop */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .hamburger.active span {
+            display: inline-block;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+
+        .info-box {
+            background: #f0f4ff;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box strong {
+            color: #667eea;
+        }
+
+        /* MOBILE STYLES - Screen width less than 768px */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            /* Show hamburger menu on mobile */
+            .hamburger {
+                display: block;
+            }
+
+            /* Hide navigation by default on mobile */
+            nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+            }
+
+            /* Show navigation when active */
+            nav.active {
+                display: flex;
+            }
+
+            /* Stack menu items vertically on mobile */
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+
+            nav li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav a {
+                padding: 15px 20px;
+                border-bottom: none;
+                border-left: 3px solid transparent;
+            }
+
+            nav a:hover,
+            nav a.active {
+                background: rgba(255, 255, 255, 0.2);
+                border-left-color: #ffd700;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+
+            .code-block {
+                font-size: 11px;
+                padding: 15px;
+            }
+        }
+
+        /* TABLET STYLES - Screen width between 769px and 1024px */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            nav ul {
+                gap: 2px;
+            }
+
+            nav a {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            .hamburger,
+            header {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .section {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- RESPONSIVE NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🚀 MyApp</div>
+            <button class="hamburger" id="hamburger">☰</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h1>📱 Task 4.1: Responsive Navigation with Media Queries</h1>
+
+        <div class="section">
+            <h2>Understanding Responsive Navigation</h2>
+            <p>
+                This page demonstrates how navigation changes based on screen size using CSS media queries.
+                Try resizing your browser window to see the transformation:
+            </p>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8; margin-top: 15px;">
+                <li><strong>Desktop (wider than 768px):</strong> Navigation displays horizontally</li>
+                <li><strong>Mobile (768px and below):</strong> Navigation becomes a hamburger menu</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Desktop Layout (Default)</h2>
+            <p>
+                On desktop screens, the navigation menu is displayed horizontally next to the logo.
+                This provides quick access to all menu items without extra clicks.
+            </p>
+            <div class="code-block">
+/* Desktop Navigation - Horizontal Layout */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+nav a {
+    padding: 12px 20px;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    border-bottom-color: #ffd700;
+}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mobile Layout (Media Query)</h2>
+            <p>
+                On mobile screens (768px and below), the navigation transforms into a toggleable menu
+                accessed via a hamburger button (☰). This saves space and improves mobile usability.
+            </p>
+            <div class="code-block">
+@media (max-width: 768px) {
+    /* Show hamburger button */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide nav by default, show when active */
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    /* Stack menu items vertically */
+    nav ul {
+        flex-direction: column;
+    }
+
+    /* Adjust styling for mobile */
+    nav a {
+        padding: 15px 20px;
+        border-left: 3px solid transparent;
+    }
+}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>How the Hamburger Menu Works</h2>
+            <p>
+                The hamburger button toggles a CSS class on the navigation menu. When you click the button,
+                JavaScript adds or removes the "active" class, which changes the display property.
+            </p>
+            <div class="code-block">
+/* JavaScript for hamburger menu */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+/* CSS for toggled state */
+nav.active {
+    display: flex;
+}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Breakpoints Explained</h2>
+            <div class="info-box">
+                <strong>Mobile First Approach:</strong> Start with mobile styles, then use media queries 
+                to enhance for larger screens.
+            </div>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8; margin-top: 15px;">
+                <li><strong>Mobile:</strong> max-width: 480px - Small phones</li>
+                <li><strong>Tablet:</strong> 481px - 768px - Tablets and large phones</li>
+                <li><strong>Small Desktop:</strong> 769px - 1024px - Small laptop screens</li>
+                <li><strong>Large Desktop:</strong> 1025px+ - Full-size monitors</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Applications</h2>
+            <p>
+                This responsive navigation pattern is used by virtually all modern websites:
+            </p>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8; margin-top: 15px;">
+                <li>News websites and blogs</li>
+                <li>E-commerce platforms (Amazon, eBay, etc.)</li>
+                <li>Social media sites (Facebook, Twitter, Instagram)</li>
+                <li>SaaS applications</li>
+                <li>Portfolio and personal websites</li>
+                <li>Corporate websites</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Try It Out!</h2>
+            <p>
+                Resize your browser window to trigger the media query breakpoint at 768px.
+                You'll see:
+            </p>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8; margin-top: 15px;">
+                <li>Navigation menu disappears above the breakpoint</li>
+                <li>Hamburger button appears below the breakpoint</li>
+                <li>Menu items stack vertically when shown on mobile</li>
+                <li>Click the hamburger button to toggle the menu</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

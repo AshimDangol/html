@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1.3: Sticky Section Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* STICKY SECTION TITLES */
+        .section-title {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 50px;
+        }
+
+        .section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        /* EXPLANATION SECTION */
+        .explanation {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 50px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .explanation p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #f9f9f9;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f0f4ff;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 50;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .key-points {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .key-points h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .key-points ul {
+            margin-left: 20px;
+        }
+
+        .key-points li {
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎯 Task 1.3: Sticky Section Titles</h1>
+        <p>Scroll down to see section headings stick to the top</p>
+    </header>
+
+    <div class="container">
+        <!-- SECTION 1 -->
+        <h2 class="section-title">📚 Section 1: Introduction to Sticky Positioning</h2>
+        <div class="section">
+            <p>
+                <code>position: sticky</code> is a hybrid of relative and fixed positioning. 
+                An element with sticky positioning will behave as position: relative until the user scrolls past it. 
+                Once it reaches a specified offset, it becomes fixed relative to the viewport.
+            </p>
+            <p>
+                This is incredibly useful for headers, navigation bars, and table headers that you want to remain 
+                visible while scrolling through content.
+            </p>
+            <p>
+                Keep scrolling to see how the section titles "stick" to the top of the page when you scroll past them.
+            </p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <h2 class="section-title">🔧 Section 2: How Sticky Works</h2>
+        <div class="section">
+            <p>
+                The key difference between sticky and fixed positioning is that sticky elements remain part of the 
+                document flow. They don't overlap content the way fixed elements do.
+            </p>
+            <p>
+                When you apply <code>position: sticky</code> with a <code>top</code> value, the element will:
+            </p>
+            <ul>
+                <li>Start in its normal document flow position</li>
+                <li>When you scroll past it by the specified amount (e.g., top: 0), it "sticks" to that position</li>
+                <li>It stops sticking when its parent container scrolls out of view</li>
+                <li>The element stays within its parent's bounding box</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 class="section-title">💡 Section 3: Practical Applications</h2>
+        <div class="section">
+            <p>
+                Sticky positioning is perfect for:
+            </p>
+            <ul>
+                <li><strong>Table Headers:</strong> Keep column headers visible while scrolling through data</li>
+                <li><strong>Section Titles:</strong> Like the ones in this demo, keep them visible as you read content</li>
+                <li><strong>Navigation Sidebars:</strong> Keep navigation visible while scrolling through content</li>
+                <li><strong>Price Bars in E-commerce:</strong> Keep the price and "Add to Cart" button visible</li>
+                <li><strong>Chat Interfaces:</strong> Keep the message input field visible</li>
+                <li><strong>Analytics Dashboards:</strong> Keep filter options visible while scrolling results</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 class="section-title">⚙️ Section 4: Technical Requirements</h2>
+        <div class="section">
+            <p>
+                For <code>position: sticky</code> to work correctly, you need to:
+            </p>
+            <ul>
+                <li>Specify at least one of: <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code></li>
+                <li>Ensure the parent container has enough height for the sticky element to move within</li>
+                <li>The sticky element cannot be clipped by its parent's <code>overflow</code> property</li>
+                <li>The parent container must be scrollable (not the element itself)</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5 -->
+        <h2 class="section-title">🎨 Section 5: Comparison with Other Positioning</h2>
+        <div class="section">
+            <p>
+                Let's compare the different positioning values:
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Position Value</th>
+                        <th>Behavior</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>static</strong></td>
+                        <td>Default value, element in normal document flow</td>
+                        <td>Most elements</td>
+                    </tr>
+                    <tr>
+                        <td><strong>relative</strong></td>
+                        <td>Offset from normal position, still in document flow</td>
+                        <td>Creating positioning context for absolute children</td>
+                    </tr>
+                    <tr>
+                        <td><strong>absolute</strong></td>
+                        <td>Removed from document flow, positioned to nearest parent</td>
+                        <td>Badges, modals, tooltips</td>
+                    </tr>
+                    <tr>
+                        <td><strong>fixed</strong></td>
+                        <td>Removed from document flow, positioned to viewport</td>
+                        <td>Navigation bars, chat widgets</td>
+                    </tr>
+                    <tr>
+                        <td><strong>sticky</strong></td>
+                        <td>Hybrid - relative until scrolled past, then fixed to viewport</td>
+                        <td>Table headers, section titles</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 6 -->
+        <h2 class="section-title">📖 Section 6: Browser Support</h2>
+        <div class="section">
+            <p>
+                <code>position: sticky</code> has excellent browser support in modern browsers:
+            </p>
+            <ul>
+                <li>Chrome 56+ (August 2017)</li>
+                <li>Firefox 59+ (March 2018)</li>
+                <li>Safari 13+ (September 2019)</li>
+                <li>Edge 16+ (April 2018)</li>
+            </ul>
+            <p>
+                For older browsers that don't support sticky positioning, the elements will fall back to 
+                <code>position: relative</code> behavior, which is acceptable degradation.
+            </p>
+        </div>
+
+        <!-- SECTION 7 -->
+        <h2 class="section-title">🚀 Section 7: Best Practices</h2>
+        <div class="section">
+            <p>
+                When using sticky positioning, keep these best practices in mind:
+            </p>
+            <ul>
+                <li>Always specify <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code></li>
+                <li>Use appropriate z-index values to manage layering</li>
+                <li>Test on different screen sizes and content heights</li>
+                <li>Consider performance - sticky elements are recalculated during scroll</li>
+                <li>Ensure sticky elements don't cover important content</li>
+                <li>Use sticky for smaller elements (headers, navigation), not large sections</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 8 -->
+        <h2 class="section-title">✅ Section 8: Summary</h2>
+        <div class="section">
+            <p>
+                You've now seen <code>position: sticky</code> in action! The section titles above stick to the top 
+                as you scroll, making it easy to see which section you're reading.
+            </p>
+            <p>
+                This is a powerful tool for improving user experience by keeping important reference points visible 
+                while users explore content. Remember:
+            </p>
+            <ul>
+                <li>Sticky is a hybrid between relative and fixed</li>
+                <li>It keeps elements visible while scrolling within their parent container</li>
+                <li>Perfect for headers, titles, and reference information</li>
+                <li>Has great browser support in modern applications</li>
+            </ul>
+            <p style="margin-top: 20px; font-weight: bold; color: #667eea;">
+                Continue scrolling to reach the end of the page and see our final explanation.
+            </p>
+        </div>
+    </div>
+
+    <!-- EXPLANATION SECTION -->
+    <div class="explanation">
+        <h2>Understanding position: sticky</h2>
+
+        <p>
+            The sticky positioning technique combines the best of both <code>position: relative</code> and 
+            <code>position: fixed</code>. It allows elements to "stick" to the viewport while remaining part of the 
+            document flow.
+        </p>
+
+        <h3>CSS Implementation:</h3>
+        <div class="code-block">
+.section-title {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* ... other styles ... */
+}
+        </div>
+
+        <div class="key-points">
+            <h3>💡 Key Characteristics of Sticky Positioning</h3>
+            <ul>
+                <li><strong>Requires offset property:</strong> At least one of top, right, bottom, or left must be set</li>
+                <li><strong>Remains in document flow:</strong> Unlike fixed, sticky elements don't overlap content</li>
+                <li><strong>Bound to parent:</strong> Sticky elements can't move beyond their parent container</li>
+                <li><strong>Excellent UX:</strong> Great for keeping reference information visible</li>
+                <li><strong>Performance:</strong> Better than JavaScript-based sticky solutions</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 30px; color: #999; font-style: italic;">
+            Real-world applications: Table headers, navigation sidebars, filter panels, price bars, chat input fields
+        </p>
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator">↑</div>
+</body>
+</html>

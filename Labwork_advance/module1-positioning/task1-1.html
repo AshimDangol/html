@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1.1: Fixed Header & Footer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* FIXED HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        /* FIXED FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        /* MAIN CONTENT - Adjusted to prevent overlap */
+        main {
+            margin-top: 80px;
+            margin-bottom: 60px;
+            padding: 40px;
+        }
+
+        .content-section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .content-section p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 12px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- FIXED HEADER -->
+    <header>
+        <h1>📌 Task 1.1: Fixed Header & Footer</h1>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="content-section">
+            <h2>Section 1: Understanding Fixed Positioning</h2>
+            <p>
+                The header and footer above and below are using <code>position: fixed</code>. 
+                This removes them from the normal document flow and keeps them visible even when scrolling.
+                The main content has margin-top and margin-bottom to prevent overlap with fixed elements.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 2: How Fixed Positioning Works</h2>
+            <p>
+                Fixed elements are positioned relative to the viewport (the visible area of the browser).
+                They stay in the same position even when the page is scrolled.
+                Common use cases include navigation bars, chat widgets, and floating action buttons.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 3: Scroll Down to See the Effect</h2>
+            <p>
+                Notice how the header remains at the top and the footer at the bottom as you scroll.
+                The z-index property ensures they appear above other content.
+                This is a fundamental technique used in modern web design.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 4: More Content</h2>
+            <p>
+                The <code>z-index</code> property is crucial for fixed elements. It determines the stacking order
+                of elements on the page. Higher z-index values appear on top of lower values.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 5: Real-World Applications</h2>
+            <p>
+                Fixed positioning is used in many real-world scenarios:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Navigation bars that stay visible while scrolling</li>
+                    <li>Chat windows in the bottom-right corner</li>
+                    <li>Cookie consent banners</li>
+                    <li>Back-to-top buttons</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 6: Viewport vs Document Flow</h2>
+            <p>
+                Unlike relative or absolute positioning, fixed elements are positioned relative to the viewport,
+                not their parent element. This makes them perfect for persistent UI elements.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 7: Continue Scrolling</h2>
+            <p>
+                Keep scrolling to experience how the fixed header and footer remain in place while the content moves.
+                This is a key concept in understanding CSS positioning.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Section 8: End of Content</h2>
+            <p>
+                You've reached the end of the content. The header and footer should still be visible and fixed in position.
+                This demonstrates the power and utility of the position: fixed property in web design.
+            </p>
+        </div>
+    </main>
+
+    <!-- FIXED FOOTER -->
+    <footer>
+        <p>&copy; 2024 Modern CSS Layouts Lab | Module 1: Positioning | Task 1.1: Fixed Header & Footer</p>
+    </footer>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator">
+        Scroll down to see the effect ↓
+    </div>
+</body>
+</html>

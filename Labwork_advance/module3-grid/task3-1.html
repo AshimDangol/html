@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3.1: Dashboard Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        /* GRID LAYOUT */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            gap: 0;
+        }
+
+        /* GRID AREAS */
+        header {
+            grid-column: 1 / -1;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        sidebar {
+            grid-column: 1;
+            grid-row: 2;
+            background: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+
+        sidebar nav ul {
+            list-style: none;
+        }
+
+        sidebar nav li {
+            padding: 0;
+            margin: 0;
+        }
+
+        sidebar nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        sidebar nav a:hover,
+        sidebar nav a.active {
+            background: #667eea;
+            border-left-color: #ffd700;
+        }
+
+        main {
+            grid-column: 2;
+            grid-row: 2;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        footer {
+            grid-column: 1 / -1;
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #667eea;
+        }
+
+        main h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+
+        .layout-diagram {
+            background: #f0f4ff;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .layout-diagram div {
+            display: inline-block;
+            padding: 20px 30px;
+            margin: 5px;
+            background: white;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <!-- GRID DASHBOARD -->
+    <div class="dashboard">
+        <!-- HEADER -->
+        <header>
+            <h1>📊 Task 3.1: Dashboard Layout with CSS Grid</h1>
+        </header>
+
+        <!-- SIDEBAR -->
+        <sidebar>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">📊 Dashboard</a></li>
+                    <li><a href="#">👥 Users</a></li>
+                    <li><a href="#">📈 Analytics</a></li>
+                    <li><a href="#">⚙️ Settings</a></li>
+                    <li><a href="#">📝 Reports</a></li>
+                    <li><a href="#">💬 Messages</a></li>
+                    <li><a href="#">🔐 Security</a></li>
+                    <li><a href="#">📚 Help</a></li>
+                </ul>
+            </nav>
+        </sidebar>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <h1>Welcome to Your Dashboard</h1>
+
+            <div class="section">
+                <h2>Understanding CSS Grid for Dashboard Layouts</h2>
+                <p>
+                    CSS Grid is a two-dimensional layout system that's perfect for creating complex,
+                    structured layouts like dashboards. Unlike Flexbox which is one-dimensional,
+                    Grid can control both rows and columns simultaneously.
+                </p>
+                <p>
+                    This dashboard uses a simple 2-column, 3-row grid structure:
+                </p>
+                <div class="layout-diagram">
+                    <div style="width: 100%; margin: 5px 0;">Header (spans full width)</div>
+                    <div>Sidebar<br/>(250px)</div>
+                    <div style="flex: 1;">Main Content<br/>(1fr)</div>
+                    <div style="width: 100%; margin: 5px 0;">Footer (spans full width)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid Template Setup</h2>
+                <p>
+                    The main grid container has two columns: a 250px sidebar and a flexible 1fr main area.
+                    The rows are defined as: auto (header), 1fr (content), and auto (footer).
+                </p>
+                <div class="code-block">
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 0;
+    min-height: 100vh;
+}
+
+header {
+    grid-column: 1 / -1;  /* Spans all columns */
+    grid-row: 1;
+}
+
+sidebar {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+footer {
+    grid-column: 1 / -1;  /* Spans all columns */
+    grid-row: 3;
+}
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid Properties Explained</h2>
+                <p>
+                    <strong>grid-template-columns:</strong> Defines the width of each column.
+                    250px for sidebar, 1fr for flexible main area.
+                </p>
+                <p>
+                    <strong>grid-template-rows:</strong> Defines the height of each row.
+                    auto, 1fr, and auto make header/footer size to content, main area takes remaining space.
+                </p>
+                <p>
+                    <strong>grid-column / grid-row:</strong> Position items in the grid.
+                    Using "1 / -1" makes an item span all columns.
+                </p>
+                <p>
+                    <strong>fr unit:</strong> "Flexible fraction" - takes up remaining space proportionally.
+                    1fr means take 1 share of remaining space.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Real-World Dashboard Applications</h2>
+                <p>
+                    This layout pattern is used in:
+                </p>
+                <ul style="margin-left: 20px; color: #555; line-height: 1.8;">
+                    <li><strong>Admin Panels:</strong> Sidebar navigation with main content area</li>
+                    <li><strong>Project Management Tools:</strong> Multiple panes and sections</li>
+                    <li><strong>Analytics Dashboards:</strong> Header, sidebar, and content grid</li>
+                    <li><strong>Email Clients:</strong> Folder sidebar with email list and preview</li>
+                    <li><strong>IDE Editors:</strong> File explorer, code editor, and console</li>
+                    <li><strong>CMS Platforms:</strong> Navigation, settings, and content area</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Advantages of Using Grid for Dashboards</h2>
+                <p>
+                    ✅ <strong>Clean separation:</strong> Header, sidebar, main, and footer are clearly defined<br/>
+                    ✅ <strong>Responsive ready:</strong> Easy to adjust grid in media queries<br/>
+                    ✅ <strong>Two-dimensional:</strong> Control rows and columns independently<br/>
+                    ✅ <strong>No nesting issues:</strong> Direct positioning without wrapper divs<br/>
+                    ✅ <strong>Explicit layout:</strong> Layout is declared in CSS, not HTML structure<br/>
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2024 Dashboard Management System | Module 3: Grid Layout | Task 3.1</p>
+        </footer>
+    </div>
+</body>
+</html>

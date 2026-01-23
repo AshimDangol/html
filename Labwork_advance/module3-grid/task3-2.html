@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3.2: Statistics Cards with Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #999;
+            font-size: 16px;
+        }
+
+        /* GRID CONTAINER FOR STATS CARDS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        /* Responsive grid */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* STAT CARD */
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #667eea;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-card.blue {
+            border-top-color: #667eea;
+        }
+
+        .stat-card.green {
+            border-top-color: #2ed573;
+        }
+
+        .stat-card.orange {
+            border-top-color: #ffa502;
+        }
+
+        .stat-card.red {
+            border-top-color: #ff4757;
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #999;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-change {
+            font-size: 12px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-change.positive {
+            color: #2ed573;
+        }
+
+        .stat-change.negative {
+            color: #ff4757;
+        }
+
+        /* EXPLANATION SECTION */
+        .explanation {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .explanation h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .explanation p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+
+        .grid-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .benefit-card {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Task 3.2: Statistics Cards with Grid</h1>
+            <p>Creating a responsive statistics dashboard using CSS Grid</p>
+        </div>
+
+        <!-- GRID CONTAINER FOR STATS -->
+        <div class="stats-grid">
+            <!-- STAT CARD 1 -->
+            <div class="stat-card blue">
+                <div class="stat-icon">👥</div>
+                <div class="stat-value">2,543</div>
+                <div class="stat-label">Total Users</div>
+                <div class="stat-change positive">↑ 12% from last month</div>
+            </div>
+
+            <!-- STAT CARD 2 -->
+            <div class="stat-card green">
+                <div class="stat-icon">💰</div>
+                <div class="stat-value">$84,231</div>
+                <div class="stat-label">Revenue</div>
+                <div class="stat-change positive">↑ 23% from last month</div>
+            </div>
+
+            <!-- STAT CARD 3 -->
+            <div class="stat-card orange">
+                <div class="stat-icon">📦</div>
+                <div class="stat-value">1,204</div>
+                <div class="stat-label">Orders</div>
+                <div class="stat-change positive">↑ 8% from last month</div>
+            </div>
+
+            <!-- STAT CARD 4 -->
+            <div class="stat-card red">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-value">42</div>
+                <div class="stat-label">Issues</div>
+                <div class="stat-change negative">↓ 5% from last month</div>
+            </div>
+
+            <!-- STAT CARD 5 -->
+            <div class="stat-card blue">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value">4.8</div>
+                <div class="stat-label">Avg Rating</div>
+                <div class="stat-change positive">↑ 0.2 from last month</div>
+            </div>
+
+            <!-- STAT CARD 6 -->
+            <div class="stat-card green">
+                <div class="stat-icon">✅</div>
+                <div class="stat-value">98.5%</div>
+                <div class="stat-label">Uptime</div>
+                <div class="stat-change positive">↑ 0.3% from last month</div>
+            </div>
+
+            <!-- STAT CARD 7 -->
+            <div class="stat-card orange">
+                <div class="stat-icon">📱</div>
+                <div class="stat-value">67%</div>
+                <div class="stat-label">Mobile Traffic</div>
+                <div class="stat-change positive">↑ 4% from last month</div>
+            </div>
+
+            <!-- STAT CARD 8 -->
+            <div class="stat-card red">
+                <div class="stat-icon">📉</div>
+                <div class="stat-value">3.2%</div>
+                <div class="stat-label">Bounce Rate</div>
+                <div class="stat-change negative">↑ 0.5% from last month</div>
+            </div>
+        </div>
+
+        <!-- EXPLANATION SECTION -->
+        <div class="explanation">
+            <h2>Understanding Grid for Statistics Dashboards</h2>
+
+            <p>
+                The statistics cards above use CSS Grid with <code>grid-template-columns: repeat(4, 1fr)</code>
+                to create a flexible 4-column layout. This approach is perfect for responsive dashboards because
+                the grid automatically adjusts the number of columns on different screen sizes.
+            </p>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">CSS Grid Implementation:</h3>
+            <div class="code-block">
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 640px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+            </div>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Key Grid Concepts:</h3>
+
+            <p>
+                <strong>repeat() function:</strong> Creates multiple columns with the same size.
+                <code>repeat(4, 1fr)</code> creates 4 equal-width columns.
+            </p>
+
+            <p>
+                <strong>1fr unit:</strong> "Flexible fraction" - represents an equal share of available space.
+                With <code>repeat(4, 1fr)</code>, each column gets 1/4 of the container width.
+            </p>
+
+            <p>
+                <strong>gap property:</strong> Creates consistent spacing between grid items.
+                This is much cleaner than margin-based spacing.
+            </p>
+
+            <p>
+                <strong>Responsive grid:</strong> By changing the grid-template-columns in media queries,
+                the cards automatically reorganize from 4 columns → 2 columns → 1 column on smaller screens.
+            </p>
+
+            <div class="grid-benefits">
+                <div class="benefit-card">
+                    <h3>💡 Auto-Responsive</h3>
+                    <p>
+                        Grid automatically wraps items when columns change in media queries.
+                        No need for complex flex-wrap logic.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>⏹️ Equal Sizing</h3>
+                    <p>
+                        Using 1fr ensures all cards are exactly the same width.
+                        Much simpler than calculating percentages.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🎯 Predictable Layout</h3>
+                    <p>
+                        CSS Grid is explicit about dimensions. You know exactly how many
+                        cards will fit on each row.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🔄 Easy Modifications</h3>
+                    <p>
+                        Changing from 4 columns to 3, or 3 to 2, requires only a single
+                        CSS line change.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>📏 Consistent Gaps</h3>
+                    <p>
+                        The gap property applies to all grid items at once, ensuring
+                        uniform spacing throughout.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🌐 Browser Support</h3>
+                    <p>
+                        CSS Grid has excellent support in all modern browsers.
+                        Perfect for production applications.
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Comparing Grid vs Flexbox for Cards:</h3>
+
+            <div class="code-block">
+/* With Flexbox: Need flex-wrap and complex calculations */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 1 calc(25% - 15px);  /* Calculation needed */
+    min-width: 200px;
+}
+
+/* With Grid: Simple and clean */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+            </div>
+
+            <p style="margin-top: 30px; color: #999; font-style: italic;">
+                Real-world applications: Analytics dashboards, admin panels, KPI displays, metrics cards,
+                performance monitoring, business intelligence platforms
+            </p>
+        </div>
+    </div>
+</body>
+</html>

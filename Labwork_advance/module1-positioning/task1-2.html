@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1.2: Notification Badge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 32px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* CARD - position: relative creates positioning context for children */
+        .card {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* NOTIFICATION BADGE - position: absolute positioned relative to parent card */
+        .notification-badge {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: #ff4757;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+            border: 3px solid white;
+        }
+
+        /* Alternative badge styles */
+        .badge-success {
+            background: #2ed573;
+        }
+
+        .badge-warning {
+            background: #ffa502;
+        }
+
+        .badge-info {
+            background: #1890ff;
+        }
+
+        /* EXPLANATION SECTION */
+        .explanation {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .explanation p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .key-points {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .key-points h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .key-points ul {
+            margin-left: 20px;
+        }
+
+        .key-points li {
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Task 1.2: Notification Badge with Positioning</h1>
+
+        <div class="cards-grid">
+            <!-- CARD 1 -->
+            <div class="card">
+                <span class="notification-badge">3</span>
+                <h2>Messages</h2>
+                <p>
+                    You have 3 new messages waiting in your inbox. Click to read them and stay updated.
+                </p>
+                <p style="font-size: 14px; color: #999;">Last updated: 2 hours ago</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+                <span class="notification-badge badge-success">12</span>
+                <h2>Notifications</h2>
+                <p>
+                    Your profile has 12 new notifications. These could be friend requests, likes, or comments.
+                </p>
+                <p style="font-size: 14px; color: #999;">Last updated: 1 hour ago</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+                <span class="notification-badge badge-warning">5</span>
+                <h2>Alerts</h2>
+                <p>
+                    You have 5 pending alerts that require your attention. Review them to stay on top.
+                </p>
+                <p style="font-size: 14px; color: #999;">Last updated: 30 minutes ago</p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card">
+                <span class="notification-badge badge-info">8</span>
+                <h2>Updates</h2>
+                <p>
+                    8 new system updates are available. Keep your account secure and up to date.
+                </p>
+                <p style="font-size: 14px; color: #999;">Last updated: Just now</p>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="card">
+                <span class="notification-badge">2</span>
+                <h2>Tasks</h2>
+                <p>
+                    You have 2 pending tasks that need to be completed today. Manage your time wisely.
+                </p>
+                <p style="font-size: 14px; color: #999;">Last updated: 3 hours ago</p>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="card">
+                <span class="notification-badge badge-success">15</span>
+                <h2>Comments</h2>
+                <p>
+                    15 people have commented on your recent posts. View the discussions now.
+                </p>
+                <p style="font-size: 14px; color: #999;">Last updated: 4 hours ago</p>
+            </div>
+        </div>
+
+        <!-- EXPLANATION SECTION -->
+        <div class="explanation">
+            <h2>Understanding Relative & Absolute Positioning</h2>
+
+            <p>
+                This task demonstrates how <strong>relative</strong> and <strong>absolute</strong> positioning work together.
+                The notification badges are absolutely positioned within their card containers.
+            </p>
+
+            <h3>Key Concepts:</h3>
+
+            <p>
+                <strong>1. position: relative (Parent)</strong>
+            </p>
+            <div class="code-block">
+.card {
+    position: relative;
+    /* Creates a positioning context for absolutely positioned children */
+}
+            </div>
+            <p>
+                Applying <code>position: relative</code> to the parent card doesn't move it from its normal position,
+                but it creates a positioning context. Any absolutely positioned children will be positioned relative
+                to this parent instead of the document body.
+            </p>
+
+            <p>
+                <strong>2. position: absolute (Child)</strong>
+            </p>
+            <div class="code-block">
+.notification-badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    /* Positioned relative to the nearest positioned ancestor (the card) */
+}
+            </div>
+            <p>
+                The badge uses <code>top: -12px</code> and <code>right: -12px</code> to position it at the corner.
+                Because the parent has <code>position: relative</code>, the badge is positioned relative to the card edges.
+            </p>
+
+            <div class="key-points">
+                <h3>💡 Key Points to Remember</h3>
+                <ul>
+                    <li><strong>Relative positioning</strong> is used on parent elements to create a positioning context</li>
+                    <li><strong>Absolute positioning</strong> removes elements from the document flow</li>
+                    <li>Absolutely positioned elements are positioned relative to their nearest positioned ancestor</li>
+                    <li>If no positioned ancestor exists, they're positioned relative to the document body</li>
+                    <li>This pattern is perfect for badges, tooltips, popovers, and dropdown menus</li>
+                    <li>Always ensure the parent has a position value (relative, absolute, fixed, sticky, or sticky)</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 30px; color: #999; font-style: italic;">
+                Real-world applications: UI badges, dropdown menus, tooltips, notification counters, custom cursors
+            </p>
+        </div>
+    </div>
+</body>
+</html>

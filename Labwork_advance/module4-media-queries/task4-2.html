@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4.2: Responsive Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* DESKTOP GRID - 3-4 columns */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        /* TABLET GRID - 2 columns */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* MOBILE GRID - 1 column */
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .card-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* EXPLANATION SECTION */
+        .explanation {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .explanation p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+
+        .breakpoint-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #f9f9f9;
+        }
+
+        .breakpoint-table th,
+        .breakpoint-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .breakpoint-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .breakpoint-table tr:nth-child(even) {
+            background: #f0f4ff;
+        }
+
+        .info-box {
+            background: #f0f4ff;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box strong {
+            color: #667eea;
+        }
+
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .explanation {
+                padding: 25px;
+            }
+
+            .code-block {
+                font-size: 11px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Task 4.2: Responsive Dashboard Layout</h1>
+    </header>
+
+    <div class="container">
+        <!-- RESPONSIVE STATS GRID -->
+        <div class="stats-grid">
+            <div class="card">
+                <h3>👥 Total Users</h3>
+                <div class="card-value">2,543</div>
+                <div class="card-description">Active users on the platform this month</div>
+            </div>
+
+            <div class="card">
+                <h3>💰 Revenue</h3>
+                <div class="card-value">$84K</div>
+                <div class="card-description">Total revenue generated this month</div>
+            </div>
+
+            <div class="card">
+                <h3>📦 Orders</h3>
+                <div class="card-value">1,204</div>
+                <div class="card-description">Total orders processed this month</div>
+            </div>
+
+            <div class="card">
+                <h3>⭐ Rating</h3>
+                <div class="card-value">4.8</div>
+                <div class="card-description">Average customer satisfaction rating</div>
+            </div>
+
+            <div class="card">
+                <h3>✅ Uptime</h3>
+                <div class="card-value">98.5%</div>
+                <div class="card-description">System availability this month</div>
+            </div>
+
+            <div class="card">
+                <h3>📱 Mobile</h3>
+                <div class="card-value">67%</div>
+                <div class="card-description">Mobile traffic percentage</div>
+            </div>
+
+            <div class="card">
+                <h3>🔍 SEO</h3>
+                <div class="card-value">92</div>
+                <div class="card-description">SEO score out of 100</div>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Speed</h3>
+                <div class="card-value">1.2s</div>
+                <div class="card-description">Average page load time</div>
+            </div>
+        </div>
+
+        <!-- EXPLANATION SECTION -->
+        <div class="explanation">
+            <h2>Creating Responsive Grids with Media Queries</h2>
+
+            <p>
+                This dashboard demonstrates how CSS Grid and media queries work together to create
+                layouts that adapt to different screen sizes. The number of columns automatically
+                changes based on the viewport width.
+            </p>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Responsive Grid CSS:</h3>
+            <div class="code-block">
+/* Desktop: 4 columns */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 640px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+            </div>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Breakpoint Strategy:</h3>
+
+            <table class="breakpoint-table">
+                <thead>
+                    <tr>
+                        <th>Device Type</th>
+                        <th>Screen Width</th>
+                        <th>Columns</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mobile Phone</strong></td>
+                        <td>Up to 640px</td>
+                        <td>1 column</td>
+                        <td>iPhone, Android phones</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tablet</strong></td>
+                        <td>641px - 1024px</td>
+                        <td>2 columns</td>
+                        <td>iPad, tablets</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Desktop</strong></td>
+                        <td>1025px+</td>
+                        <td>4 columns</td>
+                        <td>Laptops, desktops, wide screens</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Common Breakpoints:</h3>
+
+            <div class="info-box">
+                <strong>Standard Industry Breakpoints:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Mobile: 320px - 480px (small phones)</li>
+                    <li>Mobile: 480px - 768px (phones to tablets)</li>
+                    <li>Tablet: 768px - 1024px</li>
+                    <li>Desktop: 1024px - 1440px</li>
+                    <li>Large Desktop: 1440px+ (4K screens)</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Mobile-First vs Desktop-First:</h3>
+
+            <p>
+                <strong>Mobile-First Approach (Recommended):</strong>
+            </p>
+            <div class="code-block">
+/* Start with mobile layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* 1 column for mobile */
+}
+
+/* Add features for larger screens */
+@media (min-width: 641px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+            </div>
+
+            <p style="margin-top: 20px;">
+                <strong>Desktop-First Approach (Less Common):</strong>
+            </p>
+            <div class="code-block">
+/* Start with desktop layout */
+.stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Reduce for smaller screens */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+            </div>
+
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Try It Out:</h3>
+
+            <p>
+                Resize your browser window to see the dashboard transform:
+            </p>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8; margin-top: 15px;">
+                <li><strong>Wide Desktop (1025px+):</strong> 4 cards per row</li>
+                <li><strong>Tablet (641px - 1024px):</strong> 2 cards per row</li>
+                <li><strong>Mobile (up to 640px):</strong> 1 card per row (stack vertically)</li>
+            </ul>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <strong>💡 Pro Tip:</strong> Open browser DevTools (F12) and use the device 
+                emulation tool to preview different screen sizes without resizing the window.
+            </div>
+
+            <p style="margin-top: 30px; color: #999; font-style: italic;">
+                Real-world applications: Admin dashboards, analytics platforms, CMS systems, 
+                project management tools, business intelligence displays
+            </p>
+        </div>
+    </div>
+</body>
+</html>
