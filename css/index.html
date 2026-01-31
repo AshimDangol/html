@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Display & Position Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+  <header class="header">Fixed header — Display & Position demo</header>
+
+  <main class="main">
+    <section class="demo display-demo">
+      <h2>Display</h2>
+      <div class="block">.block — full-width block element</div>
+      <span class="inline">.inline</span>
+      <div class="inline-block">.inline-block</div>
+
+      <div class="row">
+        <div class="box">Flex item 1</div>
+        <div class="box">Flex item 2</div>
+        <div class="box">Flex item 3</div>
+      </div>
+
+      <div class="grid">
+        <div class="cell">Grid A</div>
+        <div class="cell">Grid B</div>
+      </div>
+
+      <div class="hidden">This element is hidden via display:none</div>
+    </section>
+
+    <section class="demo position-demo">
+      <h2>Position</h2>
+      <div class="card">
+        <div class="badge">Badge</div>
+        <p>Card with an absolutely positioned badge (parent is `position: relative`).</p>
+      </div>
+
+      <div class="sidebar">
+        <p>Sticky sidebar (sticks when scrolled near viewport top)</p>
+      </div>
+
+      <div class="offset">Relatively offset element (visual shift)</div>
+    </section>
+
+    <div class="spacer"></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,299 @@
+/* Global */
+* { box-sizing: border-box; }
+body { font-family: system-ui,Segoe UI,Helvetica,Arial; margin: 0; color: #111; }
+.header { position: fixed; top: 0; left: 0; right: 0; height: 56px; background: #0b5; display:flex; align-items:center; padding:0 16px; z-index:1000; }
+.main { padding: 80px 16px 32px; max-width:900px; margin:0 auto; }
+.demo { margin-bottom: 28px; padding: 12px; border: 1px solid #e3e3e3; border-radius:6px; background:#fafafa; }
+
+/* Display examples */
+.block { display:block; background:#eef; padding:8px; margin-bottom:8px; }
+.inline { display:inline; background:#fee; padding:4px 8px; margin-right:8px; }
+.inline-block { display:inline-block; width:140px; height:36px; background:#efe; padding:6px; margin-right:8px; vertical-align:middle; }
+
+.row { display:flex; gap:8px; margin:12px 0; }
+.box { background:#ddd; padding:12px; flex:1; text-align:center; }
+
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0; }
+.cell { background:#f5f5f5; padding:12px; }
+
+.hidden { display:none; }
+
+/* Position examples */
+.card { position: relative; padding:18px; border-radius:8px; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.06); margin-bottom:12px; }
+.badge { position: absolute; top:8px; right:8px; background:#c44; color:#fff; padding:4px 8px; border-radius:4px; font-weight:600; }
+
+.sidebar { position: sticky; top: 72px; background:#fff8e6; padding:10px; border-radius:6px; margin-bottom:12px; }
+.offset { position: relative; top: 8px; left: 4px; background:#eef8ff; padding:8px; display:inline-block; }
+
+.spacer { height:900px; }
+
+/* ============================================
+   DISPLAY PROPERTY EXAMPLES
+   ============================================ */
+
+/* Block: Takes full width, respects margins/padding */
+.display-block {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #e8f5e9;
+}
+
+/* Inline: Flows with text, ignores width/height */
+.display-inline {
+  display: inline;
+  background-color: #fff3e0;
+  padding: 4px 8px;
+  margin: 0 5px;
+}
+
+/* Inline-Block: Inline flow but respects width/height */
+.display-inline-block {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background-color: #e3f2fd;
+  padding: 10px;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+/* Flex: Flexible layout container */
+.display-flex {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  background-color: #f3e5f5;
+  padding: 15px;
+  margin: 12px 0;
+}
+
+.flex-item {
+  flex: 1;
+  min-width: 120px;
+  background-color: #e1bee7;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Grid: Two-column responsive grid */
+.display-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  background-color: #fce4ec;
+  padding: 15px;
+  margin: 12px 0;
+}
+
+.grid-item {
+  background-color: #f8bbd0;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+/* None: Removes element from document flow */
+.display-none {
+  display: none;
+}
+
+/* ============================================
+   POSITION PROPERTY EXAMPLES
+   ============================================ */
+
+/* Static: Default positioning (normal flow) */
+.position-static {
+  position: static;
+  background-color: #ffebee;
+  padding: 12px;
+  margin: 8px 0;
+  border-left: 4px solid #c62828;
+}
+
+/* Relative: Positioned relative to normal position */
+.position-relative {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  background-color: #ffe0b2;
+  padding: 12px;
+  margin: 8px 0;
+  border-left: 4px solid #e65100;
+}
+
+/* Absolute: Positioned relative to nearest positioned ancestor */
+.position-absolute-container {
+  position: relative;
+  background-color: #e0f2f1;
+  padding: 40px 12px 12px;
+  margin: 8px 0;
+  border: 2px solid #00897b;
+  border-radius: 4px;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #00897b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Fixed: Positioned relative to viewport, stays in place */
+.position-fixed-example {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1565c0;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* Sticky: Sticks to viewport when scrolling */
+.position-sticky {
+  position: sticky;
+  top: 70px;
+  background-color: #f1f8e9;
+  padding: 12px;
+  margin: 8px 0;
+  border-left: 4px solid #558b2f;
+  z-index: 10;
+}
+
+/* ============================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ============================================ */
+
+/* Base styles for mobile-first approach */
+.responsive-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.responsive-box {
+  background-color: #c8e6c9;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Tablet screens (768px and up) */
+@media (min-width: 768px) {
+  .responsive-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+  }
+
+  .responsive-box {
+    background-color: #a5d6a7;
+    padding: 24px;
+    font-size: 16px;
+  }
+
+  .hide-on-mobile {
+    display: block;
+  }
+}
+
+/* Desktop screens (1024px and up) */
+@media (min-width: 1024px) {
+  .responsive-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 32px;
+  }
+
+  .responsive-box {
+    background-color: #81c784;
+    padding: 28px;
+    font-size: 18px;
+  }
+
+  .text-lg {
+    font-size: 24px;
+  }
+}
+
+/* Large desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .responsive-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .responsive-box {
+    background-color: #66bb6a;
+    padding: 32px;
+  }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+  .display-block {
+    background-color: #1b5e20;
+    color: #ffffff;
+  }
+
+  .position-static {
+    background-color: #b71c1c;
+    color: #ffffff;
+  }
+
+  .responsive-box {
+    background-color: #2e7d32;
+    color: #ffffff;
+  }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+  .landscape-only {
+    display: block;
+  }
+
+  .portrait-only {
+    display: none;
+  }
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+  .portrait-only {
+    display: block;
+  }
+
+  .landscape-only {
+    display: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+}
